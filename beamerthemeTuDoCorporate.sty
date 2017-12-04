@@ -1,0 +1,57 @@
+% Beamer-Vorlage im TU-Corporate-Design, Layout und Bilder
+% uebernommen aus der offiziellen PowerPoint-Vorlage
+
+% Autoren: Stephan Windmueller <stephan.windmueller@cs.tu-dortmund.de>
+%          Simon Dierl <simon.dierl@cs.tu-dortmund.de>
+
+\newcommand{\tudocorporate@name}{beamerthemeTuDoCorporate}
+
+\ProvidesPackage{\tudocorporate@name}[2014/10/27 TU Dortmund Corporate Design Beamer Layout]
+
+\RequirePackage{graphicx}
+
+\definecolor{tu}{rgb}{0.517, 0.721, 0.094}
+\definecolor{lgray}{rgb}{.9, .9, .9}
+
+\newcommand{\tudotitle}{
+  \begin{frame}
+	\includegraphics[width=\linewidth]{\tudocorporate@name-title.jpg}\\
+	\vspace{5pt}
+	\inserttitle
+  \end{frame}
+}
+
+\mode<presentation>
+
+\makeatletter
+
+\usetheme{default}
+
+\setbeamercolor{structure}{fg=tu, bg=lgray}
+\setbeamercolor{frametitle}{fg=black, bg=}
+
+\setbeamertemplate{background}{
+  \includegraphics[width=\paperwidth]{\tudocorporate@name-background}
+}
+
+\setbeamertemplate{frametitle}{
+  \usebeamerfont{frametitle} \insertframetitle
+}
+
+\setbeamertemplate{headline}{
+  \vspace{0.75cm}
+  \hfill \footnotesize{\insertinstitute} \hspace{0.5cm}
+  \vspace{1cm}
+}
+
+\setbeamertemplate{footline}{
+  \hspace{1cm} \insertauthor{} | \insertdate \hspace{5mm} \insertsubtitle
+  \hfill \insertframenumber \hspace{0.5cm}
+  \vspace{10pt}
+}
+
+\setbeamersize{text margin left=1cm}
+
+\useinnertheme{rectangles}
+
+\mode<all>
