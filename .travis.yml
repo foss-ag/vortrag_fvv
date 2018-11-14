@@ -1,0 +1,13 @@
+# Using the container-based setup
+language: shell
+script:
+  - build.sh
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: wget https://raw.githubusercontent.com/foss-ag/script_deploy-artifact/master/deploy-artifact.sh ; sh deploy-artifact.sh *.pdf
+  on:
+    all_branches: true
+addons:
+  apt:
+    packages: [texlive-full]
